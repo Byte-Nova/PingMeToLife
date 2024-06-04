@@ -9,11 +9,11 @@ namespace PingMeToLife
         [DllImport("kernel32.dll")] static extern IntPtr GetConsoleWindow();
         [DllImport("user32.dll")] static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 
-        public static string address = "www.google.com";
+        public static readonly string address = "www.google.com";
 
-        private static int timeout = 1000;
+        private static readonly int timeout = 1000;
 
-        private static bool isDebugging = false;
+        private static readonly bool isDebugging = false;
 
         public static void Main()
         {
@@ -39,7 +39,6 @@ namespace PingMeToLife
                     }
                     else pingSender.Send(address, timeout);
                 }
-
                 catch { continue; }
             }
         }
